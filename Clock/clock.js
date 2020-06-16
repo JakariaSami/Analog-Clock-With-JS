@@ -1,9 +1,10 @@
-// Selecting The Clock Hands
+// Selecting The Clock elements
 const secondHand = document.querySelector('.second');
 const minuteHand = document.querySelector('.minute');
 const hourHand = document.querySelector('.hour');
+const sound = new Audio('ClockTicking.mp3');
 
-// Calculation for ratating the hand accourding to time
+// Operation 
 function setTime () {
     var date = new Date();
     var seconds = date.getSeconds();
@@ -20,8 +21,12 @@ function setTime () {
 
     var hoursRatio = ((minutesRatio + hours) / 12);
     var hourDeg = (hoursRatio * 360);
-    hourHand.style.setProperty('--rotation', hourDeg)
+    hourHand.style.setProperty('--rotation', hourDeg);
+    
+// Ticking sound
+    sound.currentTime = 0;
+    sound.play();
 }
 
-setInterval(setTime, 1000); // To make shure the clock is updating every second
+setInterval(setTime, 1000); // To make shure the clock is updating every second.
 setTime();
