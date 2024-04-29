@@ -1,3 +1,3 @@
 # Analog-Clock-With-JS
 
-It's a very simple clock built using html5, css3 and JavaScript.
+Simple clock built using HTML, CSS and JavaScript.
